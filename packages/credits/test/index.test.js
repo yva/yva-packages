@@ -1,4 +1,4 @@
-import { saveCreds, getCreds, cleanCreds } from "../index";
+import { saveCreds, getCreds, cleanCreds } from "../src/index";
 import cookies from "js-cookie";
 
 jest.mock("js-cookie", () => {

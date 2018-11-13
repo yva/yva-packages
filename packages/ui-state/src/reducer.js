@@ -3,7 +3,7 @@ import {
   isSuccessAction,
   isErrorAction
 } from "redux-async-epic";
-import { states } from "./states";
+import { states } from "./index";
 import { UI } from "./models/UI";
 
 export const uiReducer = (state = new UI(), action) => {

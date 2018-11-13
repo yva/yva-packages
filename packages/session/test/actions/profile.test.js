@@ -1,5 +1,5 @@
 import { isObservable } from "rxjs";
-import { fetchProfile } from "../../actions/profile";
+import { fetchProfile } from "../../src/actions/profile";
 import { async } from "redux-async-epic";
 
 describe("fetchProfile", () => {

@@ -1,6 +1,8 @@
 import Record from "immutable-nestable-record";
-import { UI } from "@findo/ui-state";
+import { models } from "@findo/ui-state";
 import { Profile } from "./Profile";
+
+const { UI } = models;
 
 export const InitialState = Record(
   {

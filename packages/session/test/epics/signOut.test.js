@@ -1,18 +1,14 @@
 import { of } from "rxjs";
 import * as creds from "@findo/credits";
-import { signOut as epic } from "../../epics/signOut";
-import { signOut } from "../../actions";
+import { signOut as epic } from "../../src/epics/signOut";
+import { signOut } from "../../src/actions";
 
 jest.mock("@findo/config", () => ({
   getConfig: () => ({
-    BASE_NAME: "/dashboard",
     UPDATE_INTERVAL: 20000,
-    APP: "https://localhost/dashboard",
-    API: "https://localhost/api",
-    SSO: "https://localhost/sso",
-    CLIENT_ID: "5a9602da0f2ce70fd438bc43",
-    REDIRECT_URI: "https://localhost/dashboard/auth",
-    VERSION: "1.0.1",
+    SSO: "https://single-sign-on.service",
+    CLIENT_ID: "1",
+    REDIRECT_URI: "https://localhost/app/auth",
   }),
 }));
 
@@ -26,7 +22,7 @@ describe("signOut", () => {
     obs$.subscribe({
       complete: val => {
         expect(window.location.assign).toHaveBeenCalledWith(
-          `https://localhost/sso/oauth2/authorize?clientId=5a9602da0f2ce70fd438bc43&redirectUri=https%3A%2F%2Flocalhost%2Fdashboard%2Fauth&responseType=Code&logout=true`
+          `https://single-sign-on.service/oauth2/authorize?clientId=1&redirectUri=https%3A%2F%2Flocalhost%2Fapp%2Fauth&responseType=Code&logout=true`
         );
 
         window.location.assign.mockRestore();

@@ -1,6 +1,6 @@
 import { states } from "@findo/ui-state";
 import { success } from "redux-async-epic";
-import { sessionReducer } from "../reducer";
+import { sessionReducer } from "../../src/reducers/session";
 
 describe("sessionReducer", () => {
   it("should be a function", () => {

@@ -1,4 +1,4 @@
-import { getAuthLink, hasAccessToken } from "../lib";
+import { getAuthLink, hasAccessToken } from "../src/lib";
 
 jest.mock("@findo/config", () => ({
   getConfig: () => ({

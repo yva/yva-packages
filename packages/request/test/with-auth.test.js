@@ -1,4 +1,4 @@
-import { withAuth } from "../lib/with-auth";
+import { withAuth } from "../src/lib/with-auth";
 
 jest.mock("@findo/credits", () => ({
   getCreds: () => ({ accessToken: "mocked token" }),

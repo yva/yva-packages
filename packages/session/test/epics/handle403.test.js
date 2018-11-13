@@ -1,6 +1,6 @@
 import { of } from "rxjs";
 import { error } from "redux-async-epic";
-import { handle403 } from "../../epics/handle-403";
+import { handle403 } from "../../src/epics/handle-403";
 
 describe("handle403", () => {
   it("should call `replace` action when 403 error is come", done => {

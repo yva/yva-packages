@@ -1,5 +1,5 @@
-import { Team } from "../../models/Team";
-import { Roles } from "../../models/Roles";
+import { Team } from "../../src/models/Team";
+import { Roles } from "../../src/models/Roles";
 
 describe("Team", () => {
   it("should have defined structure", () => {

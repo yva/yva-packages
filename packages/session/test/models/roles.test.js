@@ -1,4 +1,4 @@
-import { Roles } from "../../models/Roles";
+import { Roles } from "../../src/models/Roles";
 
 describe("Roles", () => {
   it("should have defined structure", () => {

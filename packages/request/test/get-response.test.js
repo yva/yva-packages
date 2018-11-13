@@ -1,4 +1,4 @@
-import { getResponse } from "../lib/get-response";
+import { getResponse } from "../src/lib/get-response";
 import { of } from "rxjs";
 
 describe("getResponse", () => {

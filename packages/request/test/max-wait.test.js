@@ -1,7 +1,7 @@
 import { of } from "rxjs";
 import { delay } from "rxjs/operators";
 import { fakeSchedulers } from "rxjs-marbles/jest";
-import { maxWait } from "../lib/max-wait";
+import { maxWait } from "../src/lib/max-wait";
 
 jest.useFakeTimers();
 

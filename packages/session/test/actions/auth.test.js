@@ -1,4 +1,4 @@
-import { signIn, signOut } from "../../actions/auth";
+import { signIn, signOut } from "../../src/actions/auth";
 
 describe("signIn", () => {
   it("should return `sign in` action", () => {

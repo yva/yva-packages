@@ -1,7 +1,7 @@
 import { states } from "@findo/ui-state";
 import { success } from "redux-async-epic";
-import { sessionReducer } from "../reducer";
-import * as selectors from "../selectors";
+import { sessionReducer } from "../src/reducers/session";
+import * as selectors from "../src/selectors";
 
 describe("selectors", () => {
   const action = {

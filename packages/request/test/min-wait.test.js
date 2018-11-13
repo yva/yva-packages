@@ -1,6 +1,6 @@
 import { of } from "rxjs";
 import { fakeSchedulers } from "rxjs-marbles/jest";
-import { minWait } from "../lib/min-wait";
+import { minWait } from "../src/lib/min-wait";
 
 jest.useFakeTimers();
 

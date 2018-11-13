@@ -1,4 +1,4 @@
-import { withContentType } from "../lib/with-content-type";
+import { withContentType } from "../src/lib/with-content-type";
 
 describe("withContentType", () => {
   it("should return a function", () => {

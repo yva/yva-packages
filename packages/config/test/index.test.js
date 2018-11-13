@@ -1,4 +1,4 @@
-import { getConfig } from "../index";
+import { getConfig } from "../src/index";
 
 describe("getConfig", () => {
   it("should retun an empty object if is no config has been found", () => {

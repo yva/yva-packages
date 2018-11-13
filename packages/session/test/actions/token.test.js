@@ -1,5 +1,5 @@
 import { isObservable } from "rxjs";
-import { fetchToken } from "../../actions/token";
+import { fetchToken } from "../../src/actions/token";
 import { async } from "redux-async-epic";
 
 describe("fetchToken", () => {

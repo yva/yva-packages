@@ -1,4 +1,4 @@
-import { Email } from "../../models/Email";
+import { Email } from "../../src/models/Email";
 
 describe("Email", () => {
   it("should have defined structure", () => {

@@ -1,5 +1,5 @@
 import { List } from "immutable";
-import { profileReducer } from "../reducers/profile";
+import { profileReducer } from "../../src/reducers/profile";
 
 describe("profileReducer", () => {
   it("should be a function", () => {

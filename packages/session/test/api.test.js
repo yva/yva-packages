@@ -1,4 +1,4 @@
-import { getToken, getProfile } from "../api";
+import { getToken, getProfile } from "../src/api";
 
 jest.mock("@findo/request", () => ({
   request: conf => conf,

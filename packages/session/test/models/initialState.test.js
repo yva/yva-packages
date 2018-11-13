@@ -1,4 +1,4 @@
-import { InitialState } from "../../models/InitialState";
+import { InitialState } from "../../src/models/InitialState";
 
 describe("InitialState", () => {
   it("should have defined structure", () => {

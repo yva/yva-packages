@@ -1,6 +1,6 @@
 import { List } from "immutable";
-import { Email } from "../../models/Email";
-import { Profile } from "../../models/Profile";
+import { Email } from "../../src/models/Email";
+import { Profile } from "../../src/models/Profile";
 
 describe("Profile", () => {
   const profile = new Profile({ emails: [{ value: "iburnaev@yva.ai" }] });

@@ -1,5 +1,5 @@
 import { success, error, async } from "redux-async-epic";
-import { uiReducer } from "../reducer";
+import { uiReducer } from "../src/reducer";
 
 describe("uiReducer", () => {
   it("should be a function", () => {

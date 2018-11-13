@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { pipe, getRequest, request } from "../index";
+import { pipe, getRequest, request } from "../src/index";
 
 jest.mock("@findo/credits", () => ({
   getCreds: () => ({ accessToken: "mocked token" }),
