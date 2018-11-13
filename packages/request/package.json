@@ -1,0 +1,13 @@
+{
+  "name": "@findo/request",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@findo/credits": "^0.0.0",
+    "rxjs": "^6.3.3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@findo/credits",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "js-cookie": "^2.2.0",
+    "jwt-decode": "^2.2.0"
+  }
+}

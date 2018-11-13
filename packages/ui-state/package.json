@@ -1,0 +1,16 @@
+{
+  "name": "@findo/ui-state",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "immutable-nestable-record": "^0.1.2",
+    "redux": "^4.0.1",
+    "redux-async-epic": "^2.0.1",
+    "redux-observable": "^1.0.0"
+  }
+}
