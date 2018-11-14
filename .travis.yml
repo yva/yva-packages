@@ -17,8 +17,5 @@ branches:
   only:
     - master
     - next
-cache:
-  directories:
-    - "$HOME/.npm"
 notifications:
   email: false
