@@ -1,14 +1,19 @@
-import cookies from "js-cookie";
 import decode from "jwt-decode";
+import cookies from "js-cookie";
 
-export const saveCreds = ({ userId = null, accessToken = null }) => {
-  const { exp } = decode(accessToken);
+export const saveCreds = (creds = { userId: null, accessToken: null }) => {
+  const { userId, accessToken } = creds;
 
-  cookies.set("accessToken", accessToken, {
-    expires: new Date(exp * 1000),
-  });
+  if (accessToken) {
+    const { exp } = decode(accessToken);
+    cookies.set("accessToken", accessToken, {
+      expires: new Date(exp * 1000),
+    });
+  }
 
-  cookies.set("userId", userId);
+  if (userId) {
+    cookies.set("userId", userId);
+  }
 };
 
 export const getCreds = () => {

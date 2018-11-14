@@ -23,4 +23,22 @@ describe("maxWait", () => {
       expect(err).not.toBeNull();
     })
   );
+
+  it(
+    "should use default delay if no params have been passed",
+    fakeSchedulers(advance => {
+      let res = null;
+      let err = null;
+
+      maxWait()(of(1).pipe(delay(3000))).subscribe({
+        next: val => (res = val),
+        error: val => (err = val),
+      });
+
+      advance(3000);
+
+      expect(res).toBeNull();
+      expect(err).not.toBeNull();
+    })
+  );
 });

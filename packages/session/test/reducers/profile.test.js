@@ -48,4 +48,16 @@ describe("profileReducer", () => {
     expect(state.emails).toBeInstanceOf(List);
     expect(state.emails.get(1).isPrimary).toBeTruthy();
   });
+
+  it("should return default state if action is success but no `response` prop", () => {
+    const state = profileReducer(undefined, {
+      type: "session/fetch-profile/success",
+      payload: {
+        mailFormedReponse: true,
+        xhr: {},
+      },
+    });
+
+    expect(state.displayName).toBeNull();
+  })
 });

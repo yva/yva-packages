@@ -31,6 +31,12 @@ describe("saveCreds", () => {
     expect(typeof saveCreds).toEqual("function");
   });
 
+  it("should not save cookies if no params have been passed", () => {
+    saveCreds();
+
+    expect(cookies._getLocal()).toEqual({});
+  });
+
   it("should save credits to the cookies", () => {
     const credits = {
       accessToken:

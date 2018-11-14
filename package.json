@@ -2,7 +2,12 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "lint": "eslint packages/**/src packages/**/test",
+    "format:check": "prettier-eslint --list-different \"packages/**/{src,test}/*.js\"",
+    "format": "prettier-eslint --write \"packages/**/{src,test}/*.js\"",
+    "pretest": "npm run lint",
     "test": "NODE_ENV=test jest",
+    "precommit": "npm run format:check",
     "commit": "npx git-cz"
   },
   "devDependencies": {
@@ -20,10 +25,16 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "lerna": "^3.4.3",
+    "prettier-eslint-cli": "^4.7.1",
     "regenerator-runtime": "^0.12.1",
     "rxjs-marbles": "^4.3.2"
   },
   "dependencies": {},
+  "jest": {
+    "transformIgnorePatterns": [
+      "<rootDir>.*(node_modules).*$"
+    ]
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"

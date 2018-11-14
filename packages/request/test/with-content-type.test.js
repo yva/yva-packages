@@ -7,7 +7,19 @@ describe("withContentType", () => {
     expect(typeof fn).toEqual("function");
   });
 
-  it("should add to the conf `headers` property with `Accept` and `Content-Type`", () => {
+  it("should merge to the conf `headers` property `Accept` and `Content-Type`", () => {
+    const enhance = withContentType("application/json");
+
+    expect(enhance({ headers: { "X-Custom": "custom header" } })).toEqual({
+      headers: {
+        "X-Custom": "custom header",
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+  });
+
+  it("should return an object w/ property `Accept` and `Content-Type`", () => {
     const enhance = withContentType("application/json");
 
     expect(enhance({})).toEqual({

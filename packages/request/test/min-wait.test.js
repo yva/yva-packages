@@ -16,4 +16,16 @@ describe("minWait", () => {
       expect(res).toEqual(1);
     })
   );
+
+  it(
+    "should use default delay if no params have been passed",
+    fakeSchedulers(advance => {
+      let res = null;
+
+      minWait()(of(1)).subscribe(val => (res = val));
+      advance(2000);
+
+      expect(res).toEqual(1);
+    })
+  );
 });
