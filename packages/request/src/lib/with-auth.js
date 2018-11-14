@@ -1,4 +1,4 @@
-import { getCreds } from "@findo/credits";
+import { getCreds } from "@yva/credits";
 
 export const withAuth = token => requestData => {
   if (typeof requestData !== "object" || requestData === null) {

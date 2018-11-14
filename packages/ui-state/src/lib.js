@@ -1,4 +1,4 @@
-import { states } from "./index";
+import * as states from "./states";
 
 export const isIdle = state => {
   return state === states.idle;

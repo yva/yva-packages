@@ -1,4 +1,4 @@
-import { lib } from "@findo/ui-state";
+import { lib } from "@yva/ui-state";
 
 const { isSuccess, isIdle } = lib;
 

@@ -1,5 +1,5 @@
 import Record from "immutable-nestable-record";
-import { states } from "../index";
+import * as states from "../states";
 
 export const UI = Record(
   {

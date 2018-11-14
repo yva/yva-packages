@@ -1,4 +1,4 @@
-import { states } from "@findo/ui-state";
+import { states } from "@yva/ui-state";
 import { success } from "redux-async-epic";
 import { sessionReducer } from "../../src/reducers/session";
 

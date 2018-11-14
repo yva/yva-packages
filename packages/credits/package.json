@@ -1,11 +1,20 @@
 {
-  "name": "@findo/credits",
+  "name": "@yva/credits",
   "version": "0.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "es"
+  ],
   "keywords": [],
   "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "clean": "rm -rf dist/ es/",
+    "build": "rollup -c"
+  },
   "dependencies": {
     "js-cookie": "^2.2.0",
     "jwt-decode": "^2.2.0"

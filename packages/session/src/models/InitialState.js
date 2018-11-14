@@ -1,5 +1,5 @@
 import Record from "immutable-nestable-record";
-import { models } from "@findo/ui-state";
+import { models } from "@yva/ui-state";
 import { Profile } from "./Profile";
 
 const { UI } = models;

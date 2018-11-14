@@ -1,4 +1,4 @@
-import { saveCreds } from "@findo/credits";
+import { saveCreds } from "@yva/credits";
 import { async } from "redux-async-epic";
 import { createAction } from "redux-actions";
 import { tap, pluck } from "rxjs/operators";

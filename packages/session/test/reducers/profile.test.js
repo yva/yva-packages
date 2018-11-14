@@ -32,7 +32,7 @@ describe("profileReducer", () => {
           displayName: "Ivan Burnaev",
           emails: [
             {
-              value: "iburnaev@findo.com",
+              value: "iburnaev@yva.com",
             },
             {
               value: "iburnaev@yva.ai",

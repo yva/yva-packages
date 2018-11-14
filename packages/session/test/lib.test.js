@@ -1,6 +1,6 @@
 import { getAuthLink, hasAccessToken } from "../src/lib";
 
-jest.mock("@findo/config", () => ({
+jest.mock("@yva/config", () => ({
   getConfig: () => ({
     BASE_NAME: "/dashboard",
     UPDATE_INTERVAL: 20000,
@@ -13,7 +13,7 @@ jest.mock("@findo/config", () => ({
   }),
 }));
 
-jest.mock("@findo/credits", () => ({
+jest.mock("@yva/credits", () => ({
   getCreds: () => ({
     accessToken: null,
   }),

@@ -1,4 +1,4 @@
-import { cleanCreds } from "@findo/credits";
+import { cleanCreds } from "@yva/credits";
 import { tap, ignoreElements } from "rxjs/operators";
 import { ofType } from "redux-observable";
 import { getAuthLink } from "../lib";

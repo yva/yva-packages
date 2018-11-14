@@ -1,9 +1,9 @@
 import { of } from "rxjs";
-import * as creds from "@findo/credits";
+import * as creds from "@yva/credits";
 import { signIn as epic } from "../../src/epics/signIn";
 import { signIn } from "../../src/actions";
 
-jest.mock("@findo/config", () => ({
+jest.mock("@yva/config", () => ({
   getConfig: () => ({
     SSO: "https://single-sign-on.sevice",
     CLIENT_ID: "1",

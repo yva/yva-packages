@@ -4,7 +4,8 @@ node_js:
 install:
   - npx lerna bootstrap --hoist
 script:
-  - npm test
+  - npm run build
+  - npm test -- --coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 deploy:

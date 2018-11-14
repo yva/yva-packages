@@ -1,6 +1,6 @@
 import { withAuth } from "../src/lib/with-auth";
 
-jest.mock("@findo/credits", () => ({
+jest.mock("@yva/credits", () => ({
   getCreds: () => ({ accessToken: "mocked token" }),
 }));
 

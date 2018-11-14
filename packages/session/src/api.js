@@ -1,5 +1,5 @@
-import { request } from "@findo/request";
-import { getConfig } from "@findo/config";
+import { request } from "@yva/request";
+import { getConfig } from "@yva/config";
 
 export const getToken = code => {
   const { SSO, CLIENT_ID, REDIRECT_URI } = getConfig();

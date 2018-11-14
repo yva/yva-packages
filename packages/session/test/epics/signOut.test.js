@@ -1,9 +1,9 @@
 import { of } from "rxjs";
-import * as creds from "@findo/credits";
+import * as creds from "@yva/credits";
 import { signOut as epic } from "../../src/epics/signOut";
 import { signOut } from "../../src/actions";
 
-jest.mock("@findo/config", () => ({
+jest.mock("@yva/config", () => ({
   getConfig: () => ({
     UPDATE_INTERVAL: 20000,
     SSO: "https://single-sign-on.service",

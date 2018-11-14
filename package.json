@@ -2,16 +2,21 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "clean": "lerna exec --parallel npm run clean",
     "lint": "eslint packages/**/src packages/**/test",
     "format:check": "prettier-eslint --list-different \"packages/**/{src,test}/*.js\"",
     "format": "prettier-eslint --write \"packages/**/{src,test}/*.js\"",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test jest",
     "precommit": "npm run format:check",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "prebuild": "lerna bootstrap --hoist",
+    "build": "lerna exec --parallel npm run build",
+    "postbuild": "lerna bootstrap --hoist"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
@@ -27,12 +32,24 @@
     "lerna": "^3.4.3",
     "prettier-eslint-cli": "^4.7.1",
     "regenerator-runtime": "^0.12.1",
+    "rollup": "^0.67.1",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-terser": "^3.0.0",
     "rxjs-marbles": "^4.3.2"
   },
   "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
-    "transformIgnorePatterns": [
-      "<rootDir>.*(node_modules).*$"
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
     ]
   },
   "config": {

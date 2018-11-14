@@ -1,10 +1,10 @@
 import { getToken, getProfile } from "../src/api";
 
-jest.mock("@findo/request", () => ({
+jest.mock("@yva/request", () => ({
   request: conf => conf,
 }));
 
-jest.mock("@findo/config", () => ({
+jest.mock("@yva/config", () => ({
   getConfig: () => ({
     BASE_NAME: "/dashboard",
     UPDATE_INTERVAL: 20000,
@@ -18,7 +18,7 @@ jest.mock("@findo/config", () => ({
 }));
 
 describe("getToken", () => {
-  it("should call @findo/request with passed config", () => {
+  it("should call @yva/request with passed config", () => {
     expect(getToken("CODE")).toEqual({
       url: "https://localhost/sso/oauth2/token/",
       method: "POST",
@@ -34,7 +34,7 @@ describe("getToken", () => {
 });
 
 describe("getProfileRequest", () => {
-  it("should call @findo/request with passed config", () => {
+  it("should call @yva/request with passed config", () => {
     expect(getProfile()).toEqual({
       url: "https://localhost/api/users/users/me/",
     });

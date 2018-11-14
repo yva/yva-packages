@@ -1,15 +1,24 @@
 {
-  "name": "@findo/session",
+  "name": "@yva/session",
   "version": "0.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "es"
+  ],
   "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "clean": "rm -rf dist/ es/",
+    "build": "rollup -c"
+  },
   "dependencies": {
-    "@findo/config": "^0.0.0",
-    "@findo/credits": "^0.0.0",
-    "@findo/request": "^0.0.0",
-    "@findo/ui-state": "^0.0.0",
+    "@yva/config": "^0.0.0",
+    "@yva/credits": "^0.0.0",
+    "@yva/request": "^0.0.0",
+    "@yva/ui-state": "^0.0.0",
     "immutable": "^4.0.0-rc.12",
     "immutable-nestable-record": "^0.1.2",
     "qs": "^6.5.2",

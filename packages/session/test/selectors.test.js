@@ -1,4 +1,4 @@
-import { states } from "@findo/ui-state";
+import { states } from "@yva/ui-state";
 import { success } from "redux-async-epic";
 import { sessionReducer } from "../src/reducers/session";
 import * as selectors from "../src/selectors";
@@ -18,7 +18,7 @@ describe("selectors", () => {
             isAdministrator: true,
           },
         },
-        emails: [{ value: "iburnaev@findo.com" }],
+        emails: [{ value: "iburnaev@yva.com" }],
       },
     },
   };

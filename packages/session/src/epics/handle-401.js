@@ -1,7 +1,7 @@
 import { filter, map } from "rxjs/operators";
 import { isErrorAction } from "redux-async-epic";
 import { replace } from "react-router-redux";
-import { getConfig } from "@findo/config";
+import { getConfig } from "@yva/config";
 
 const is401 = ({ payload }) => {
   return payload && payload.status === 401;

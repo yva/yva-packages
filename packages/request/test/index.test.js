@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { pipe, getRequest, request } from "../src/index";
 
-jest.mock("@findo/credits", () => ({
+jest.mock("@yva/credits", () => ({
   getCreds: () => ({ accessToken: "mocked token" }),
 }));
 
