@@ -42,9 +42,6 @@
     "semantic-release-monorepo": "^6.1.1"
   },
   "dependencies": {},
-  "publishConfig": {
-    "access": "public"
-  },
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules/"

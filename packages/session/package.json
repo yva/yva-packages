@@ -8,6 +8,13 @@
     "dist",
     "es"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yva/yva-packages"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
   "license": "ISC",
   "scripts": {
