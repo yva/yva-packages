@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "node"
+install:
+  - npx lerna bootstrap --hoist
+script:
+  - npm test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+branches:
+  only:
+    - master
+    - next
+cache:
+  directories:
+    - "$HOME/.npm"
+notifications:
+  email: false
