@@ -12,7 +12,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+    - npm run deploy
 branches:
   only:
     - master
