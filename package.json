@@ -11,7 +11,7 @@
     "precommit": "npm run format:check",
     "commit": "npx git-cz",
     "build": "lerna exec --parallel npm run build",
-    "postbuild": "lerna bootstrap --hoist",
+    "postbuild": "lerna bootstrap --hoist --no-ci",
     "deploy": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
