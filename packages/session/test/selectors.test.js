@@ -5,7 +5,7 @@ import * as selectors from "../src/selectors";
 
 describe("selectors", () => {
   const action = {
-    type: "session/fetch-profile/success",
+    type: "@yva/session/fetch-profile/success",
     meta: {
       [success]: true,
     },

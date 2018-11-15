@@ -26,7 +26,7 @@ describe("profileReducer", () => {
 
   it("should return populated model when success action is passed", () => {
     const state = profileReducer(undefined, {
-      type: "session/fetch-profile/success",
+      type: "@yva/session/fetch-profile/success",
       payload: {
         response: {
           displayName: "Ivan Burnaev",
@@ -51,7 +51,7 @@ describe("profileReducer", () => {
 
   it("should return default state if action is success but no `response` prop", () => {
     const state = profileReducer(undefined, {
-      type: "session/fetch-profile/success",
+      type: "@yva/session/fetch-profile/success",
       payload: {
         mailFormedReponse: true,
         xhr: {},
@@ -59,5 +59,5 @@ describe("profileReducer", () => {
     });
 
     expect(state.displayName).toBeNull();
-  })
+  });
 });

@@ -33,7 +33,7 @@ describe("sessionReducer", () => {
 
   it("should return populated model when success action is passed", () => {
     const action = {
-      type: "session/fetch-profile/success",
+      type: "@yva/session/fetch-profile/success",
       meta: {
         [success]: true,
       },
@@ -47,5 +47,23 @@ describe("sessionReducer", () => {
 
     expect(state.profile.displayName).toEqual("Ivan Burnaev");
     expect(state.ui.state).toEqual(states.success);
+  });
+
+  it("should ignore actions without @yva/session type", () => {
+    const action = {
+      type: "@othercomp/session/fetch-profile/success",
+      meta: {
+        [success]: true,
+      },
+      payload: {
+        response: {
+          displayName: "Ivan Burnaev",
+        },
+      },
+    };
+    const state = sessionReducer(undefined, action);
+
+    expect(state.profile.displayName).toBeNull();
+    expect(state.ui.state).toEqual(states.idle);
   });
 });

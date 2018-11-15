@@ -8,7 +8,7 @@ describe("fetchProfile", () => {
   );
 
   it("should return `fetch profile` action", () => {
-    expect(action.type).toEqual("session/fetch-profile");
+    expect(action.type).toEqual("@yva/session/fetch-profile");
   });
 
   it("should have `meta` prop", () => {

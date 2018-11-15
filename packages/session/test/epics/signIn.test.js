@@ -43,7 +43,7 @@ describe("signIn", () => {
     obs$.subscribe({
       next: action => {
         expect(action).toHaveProperty("type");
-        expect(action.type).toEqual("session/fetch-profile");
+        expect(action.type).toEqual("@yva/session/fetch-profile");
         creds.getCreds.mockRestore();
         done();
       },

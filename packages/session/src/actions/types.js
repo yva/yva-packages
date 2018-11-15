@@ -1,8 +1,10 @@
+export const name = "@yva/session";
+
 export const types = {
-  signIn: "session/sign-in",
-  signOut: "session/sign-out",
-  fetchProfile: "session/fetch-profile",
-  fetchToken: "session/fetch-token",
+  signIn: `${name}/sign-in`,
+  signOut: `${name}/sign-out`,
+  fetchProfile: `${name}/fetch-profile`,
+  fetchToken: `${name}/fetch-token`,
 };
 
 export default types;

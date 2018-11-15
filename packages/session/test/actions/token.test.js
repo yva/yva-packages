@@ -9,7 +9,7 @@ describe("fetchToken", () => {
   });
 
   it("should return `fetch token` action", () => {
-    expect(action.type).toEqual("session/fetch-token");
+    expect(action.type).toEqual("@yva/session/fetch-token");
   });
 
   it("should have `meta` prop", () => {
@@ -34,7 +34,7 @@ describe("fetchToken", () => {
 
     expect(successAction).toHaveProperty("type");
     expect(successAction).toHaveProperty("payload");
-    expect(successAction.type).toEqual("session/fetch-profile");
+    expect(successAction.type).toEqual("@yva/session/fetch-profile");
     expect(successAction.payload).toEqual("/");
   });
 });
