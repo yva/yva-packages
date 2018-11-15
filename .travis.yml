@@ -10,6 +10,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
+  - git checkout master
 deploy:
   provider: script
   skip_cleanup: true
