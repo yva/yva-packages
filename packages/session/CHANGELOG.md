@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/yva/yva-packages/compare/@yva/session@0.1.3...@yva/session@0.1.4) (2018-11-15)
+
+
+### Bug Fixes
+
+* **actions:** add tracking of package specific actions ([a04fee5](https://github.com/yva/yva-packages/commit/a04fee5))
+
+
+
+
+
 ## [0.1.3](https://github.com/yva/yva-packages/compare/@yva/session@0.1.2...@yva/session@0.1.3) (2018-11-15)
 
 
