@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yva/yva-packages"
+  },
   "scripts": {
     "clean": "lerna exec --parallel npm run clean",
     "lint": "eslint packages/**/src packages/**/test",
@@ -12,7 +16,7 @@
     "commit": "npx git-cz",
     "build": "lerna exec --parallel npm run build",
     "postbuild": "lerna bootstrap --hoist --no-ci",
-    "deploy": "lerna version --conventional-commits"
+    "deploy": "lerna publish --conventional-commits --yes"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
