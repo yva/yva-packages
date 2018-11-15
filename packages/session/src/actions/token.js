@@ -10,6 +10,7 @@ export const fetchToken = createAction(types.fetchToken, null, payload => ({
   [async]: true,
   method: () =>
     getToken(payload.code).pipe(
+      pluck("response"),
       tap(saveCreds),
       pluck("accessToken")
     ),
