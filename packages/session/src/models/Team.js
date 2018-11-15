@@ -5,10 +5,10 @@ export const Team = Record(
   {
     id: "",
     name: "",
-    roles: null,
+    rolesAndSettings: null,
   },
   {
-    roles: Roles,
+    rolesAndSettings: Roles,
   },
   "SessionTeam"
 );

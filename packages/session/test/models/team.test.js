@@ -6,13 +6,13 @@ describe("Team", () => {
     expect(new Team().toJS()).toEqual({
       id: "",
       name: "",
-      roles: null,
+      rolesAndSettings: null,
     });
   });
 
   it("should populate nested record", () => {
     const team = new Team({
-      roles: {
+      rolesAndSettings: {
         isAdministrator: true,
         isManager: true,
         sendSurveys: true,
@@ -20,7 +20,7 @@ describe("Team", () => {
       },
     });
 
-    expect(team.roles).toBeInstanceOf(Roles);
-    expect(team.roles.isAdministrator).toBeTruthy();
+    expect(team.rolesAndSettings).toBeInstanceOf(Roles);
+    expect(team.rolesAndSettings.isAdministrator).toBeTruthy();
   });
 });

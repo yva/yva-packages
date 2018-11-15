@@ -27,5 +27,5 @@ export const getTeam = state => {
 };
 
 export const getRoles = state => {
-  return state.getIn(["profile", "team", "roles"], null);
+  return state.getIn(["profile", "team", "rolesAndSettings"], null);
 };

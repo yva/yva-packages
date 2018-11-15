@@ -14,7 +14,7 @@ describe("selectors", () => {
         displayName: "Ivan Burnaev",
         team: {
           id: 1,
-          roles: {
+          rolesAndSettings: {
             isAdministrator: true,
           },
         },
