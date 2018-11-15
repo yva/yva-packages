@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/yva/yva-packages/compare/@yva/session@0.1.1...@yva/session@0.1.2) (2018-11-15)
+
+
+### Bug Fixes
+
+* **token:** pluck the response prop from the fetchToken action ([26e3ac9](https://github.com/yva/yva-packages/commit/26e3ac9))
+
+
+
+
+
 ## [0.1.1](https://github.com/yva/yva-packages/compare/@yva/session@0.1.0...@yva/session@0.1.1) (2018-11-15)
 
 
