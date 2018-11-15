@@ -2,7 +2,6 @@ import { async } from "redux-async-epic";
 import { replace } from "react-router-redux";
 import { createAction } from "redux-actions";
 import { getProfile } from "../api";
-import { signOut } from "./auth";
 import types from "./types";
 
 export const fetchProfile = createAction(
@@ -20,6 +19,5 @@ export const fetchProfile = createAction(
 
       return replace(location);
     },
-    onError: signOut,
   })
 );

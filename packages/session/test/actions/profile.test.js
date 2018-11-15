@@ -40,12 +40,4 @@ describe("fetchProfile", () => {
       method: "replace",
     });
   });
-
-  it("should have `onError` action", () => {
-    expect(typeof action.meta.onError).toEqual("function");
-  });
-
-  it("should return an action by `onError` prop", () => {
-    expect(action.meta.onError()).toHaveProperty("type");
-  });
 });
