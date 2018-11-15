@@ -1,6 +1,6 @@
 {
   "name": "@yva/theme",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -21,6 +21,5 @@
   "scripts": {
     "clean": "rm -rf dist/ es/",
     "build": "rollup -c"
-  },
-  "dependencies": {}
+  }
 }

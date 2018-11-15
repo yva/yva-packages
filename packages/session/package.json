@@ -1,6 +1,6 @@
 {
   "name": "@yva/session",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -22,10 +22,10 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@yva/config": "^0.0.0",
-    "@yva/credits": "^0.0.0",
-    "@yva/request": "^0.0.0",
-    "@yva/ui-state": "^0.0.0",
+    "@yva/config": "^0.1.0",
+    "@yva/credits": "^0.1.0",
+    "@yva/request": "^0.1.0",
+    "@yva/ui-state": "^0.1.0",
     "immutable": "^4.0.0-rc.12",
     "immutable-nestable-record": "^0.1.2",
     "qs": "^6.5.2",
