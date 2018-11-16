@@ -6,6 +6,7 @@
     "url": "https://github.com/yva/yva-packages"
   },
   "scripts": {
+    "bootstrap": "lerna bootstrap --hoist --nohoist=react-scripts",
     "clean": "lerna exec --parallel npm run clean",
     "lint": "eslint packages/**/src packages/**/test",
     "format:check": "prettier-eslint --list-different \"packages/**/{src,test}/*.js\"",
@@ -16,6 +17,7 @@
     "commit": "npx git-cz",
     "build": "lerna exec --parallel npm run build",
     "postbuild": "lerna bootstrap --hoist --no-ci",
+    "build-packages": "lerna run build --parallel --ignore=@yva/apps-* -- -- -w",
     "deploy": "lerna publish --conventional-commits --yes"
   },
   "devDependencies": {
