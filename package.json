@@ -15,8 +15,9 @@
     "test": "NODE_ENV=test jest",
     "precommit": "npm run format:check",
     "commit": "npx git-cz",
-    "build": "lerna exec --parallel npm run build --ignore=@yva/apps-*",
-    "postbuild": "lerna bootstrap --hoist --no-ci",
+    "prebuild": "npx lerna bootstrap --hoist --no-ci --ignore=@yva/apps-*",
+    "build": "npx lerna exec --parallel npm run build --ignore=@yva/apps-*",
+    "postbuild": "npx lerna bootstrap --hoist --no-ci --ignore=@yva/apps-*",
     "build-packages": "lerna run build --parallel --ignore=@yva/apps-* -- -- -w",
     "deploy": "lerna publish --conventional-commits --yes"
   },
