@@ -8,8 +8,8 @@ import pkg from "./package.json";
 const external = [
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
-  "rxjs/operators",
-  "rxjs/ajax",
+  "@material-ui/core/styles",
+  "@material-ui/core/styles/createPalette",
 ];
 
 const plugins = [
