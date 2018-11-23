@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/yva/yva-packages/compare/@yva/session@0.1.5...@yva/session@0.1.6) (2018-11-23)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependencies ([3d0cff2](https://github.com/yva/yva-packages/commit/3d0cff2))
+
+
+
+
+
 ## [0.1.5](https://github.com/yva/yva-packages/compare/@yva/session@0.1.4...@yva/session@0.1.5) (2018-11-23)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/yva/yva-packages/compare/@yva/ui-state@0.1.1...@yva/ui-state@0.1.2) (2018-11-23)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependencies ([3d0cff2](https://github.com/yva/yva-packages/commit/3d0cff2))
+
+
+
+
+
 ## [0.1.1](https://github.com/yva/yva-packages/compare/@yva/ui-state@0.1.0...@yva/ui-state@0.1.1) (2018-11-23)
 
 
