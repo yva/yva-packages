@@ -6,20 +6,19 @@
     "url": "https://github.com/yva/yva-packages"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist --nohoist=react-scripts",
-    "clean": "lerna exec --parallel npm run clean",
-    "lint": "eslint packages/**/src packages/**/test",
+    "bootstrap": "npx lerna bootstrap",
+    "clean": "npx lerna exec --parallel npm run clean",
+    "lint": "npx eslint packages/**/src packages/**/test",
     "format:check": "prettier-eslint --list-different \"packages/**/{src,test}/*.js\"",
-    "format": "prettier-eslint --write \"packages/**/{src,test}/*.js\"",
+    "format": "npx prettier-eslint --write \"packages/**/{src,test}/*.js\"",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test jest",
     "precommit": "npm run format:check",
     "commit": "npx git-cz",
-    "prebuild": "npx lerna bootstrap --hoist --no-ci --ignore=@yva/apps-*",
-    "build": "npx lerna exec --parallel npm run build --ignore=@yva/apps-*",
-    "postbuild": "npx lerna bootstrap --hoist --no-ci --ignore=@yva/apps-*",
-    "build-packages": "lerna run build --parallel --ignore=@yva/apps-* -- -- -w",
-    "deploy": "lerna publish --conventional-commits --yes"
+    "build": "npx lerna exec --parallel npm run build",
+    "postbuild": "npx lerna bootstrap",
+    "build-packages": "npx lerna run build --parallel -- -- -w",
+    "deploy": "npx lerna publish --conventional-commits --yes"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
