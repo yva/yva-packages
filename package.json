@@ -7,17 +7,16 @@
   },
   "scripts": {
     "bootstrap": "npx lerna bootstrap",
-    "clean": "npx lerna exec --parallel npm run clean",
+    "clean": "npx lerna run clean --parallel",
     "lint": "npx eslint packages/**/src packages/**/test",
     "format:check": "prettier-eslint --list-different \"packages/**/{src,test}/*.js\"",
     "format": "npx prettier-eslint --write \"packages/**/{src,test}/*.js\"",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test jest",
-    "precommit": "npm run format:check",
+    "precommit": "npm run format:check && npm run lint",
     "commit": "npx git-cz",
-    "build": "npx lerna exec --parallel npm run build",
+    "build": " lerna run build --parallel",
     "postbuild": "npx lerna bootstrap",
-    "build-packages": "npx lerna run build --parallel -- -- -w",
     "deploy": "npx lerna publish --conventional-commits --yes"
   },
   "devDependencies": {
