@@ -33,7 +33,6 @@ describe("selectors", () => {
 
   it("should check if user is authenticated", () => {
     expect(selectors.isUserAuthenticated(state)).toBeTruthy();
-    expect(selectors.isUserUnknown(state)).toBeFalsy();
   });
 
   it("should return the profile", () => {

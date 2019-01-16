@@ -1,4 +1,10 @@
-import { getAuthLink, hasAccessToken } from "../src/lib";
+import {
+  getAuthLink,
+  hasAccessToken,
+  storeProfile,
+  getProfile,
+  clearStoredProfile
+} from "../src/lib";
 
 jest.mock("@yva/config", () => ({
   getConfig: () => ({
@@ -30,5 +36,53 @@ describe("getAuthLink", () => {
 describe("hasAccessToken", () => {
   it("should return false for missing `accessToken`", () => {
     expect(hasAccessToken()).toBeFalsy();
+  });
+});
+
+describe("storeProfile", () => {
+  it("should store passed profile to the sessionStorage", () => {
+    const result = storeProfile({ hasName: true });
+
+    expect(result).toBeTruthy();
+    expect(sessionStorage.getItem("profile")).toEqual(
+      JSON.stringify({ hasName: true })
+    );
+  });
+
+  it("should return `false` if it is not available to store profile", () => {
+    let a = { a: 1 };
+    let b = { a };
+
+    // define circular dependency
+    a.b = b;
+    const result = storeProfile(a);
+    expect(result).toBeFalsy();
+  });
+});
+
+describe("getProfile", () => {
+  beforeEach(() => {
+    sessionStorage.clear();
+  });
+
+  it("should return stored profile", () => {
+    storeProfile({ hasName: true });
+    expect(getProfile()).toEqual({ hasName: true });
+  });
+
+  it("should return `null` if no profile found", () => {
+    sessionStorage.setItem("profile", "[]:123");
+
+    expect(getProfile()).toEqual(null);
+  });
+});
+
+describe("clearStoredProfile", () => {
+  it("should remove `profile` from the sessionStorage", () => {
+    storeProfile({ hasName: true });
+    expect(sessionStorage.getItem("profile")).not.toBeNull();
+
+    clearStoredProfile();
+    expect(sessionStorage.getItem("profile")).toBeNull();
   });
 });

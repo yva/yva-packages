@@ -11,19 +11,7 @@ describe("sessionReducer", () => {
     const state = sessionReducer(undefined, { type: "TEST" });
 
     expect(state.toJS()).toEqual({
-      profile: {
-        avatar: null,
-        createdAt: null,
-        department: null,
-        displayName: null,
-        emails: [],
-        id: null,
-        jobTitle: null,
-        primaryEmail: null,
-        status: null,
-        team: null,
-        userId: null,
-      },
+      profile: null,
       ui: {
         state: "idle",
         details: null,
@@ -63,7 +51,7 @@ describe("sessionReducer", () => {
     };
     const state = sessionReducer(undefined, action);
 
-    expect(state.profile.displayName).toBeNull();
+    expect(state.profile).toBeNull();
     expect(state.ui.state).toEqual(states.idle);
   });
 });

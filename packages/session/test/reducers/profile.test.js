@@ -9,19 +9,7 @@ describe("profileReducer", () => {
   it("should return an InitialState w/ undefined state param", () => {
     const state = profileReducer(undefined, { type: "TEST" });
 
-    expect(state.toJS()).toEqual({
-      avatar: null,
-      createdAt: null,
-      department: null,
-      displayName: null,
-      emails: [],
-      id: null,
-      jobTitle: null,
-      primaryEmail: null,
-      status: null,
-      team: null,
-      userId: null,
-    });
+    expect(state).toEqual(null);
   });
 
   it("should return populated model when success action is passed", () => {
@@ -58,6 +46,6 @@ describe("profileReducer", () => {
       },
     });
 
-    expect(state.displayName).toBeNull();
+    expect(state).toBeNull();
   });
 });

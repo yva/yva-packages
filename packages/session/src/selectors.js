@@ -1,17 +1,9 @@
-import { lib } from "@yva/ui-state";
-
-const { isSuccess, isIdle } = lib;
-
 export const getUI = state => {
   return state.get("ui");
 };
 
 export const isUserAuthenticated = state => {
-  return isSuccess(state.getIn(["ui", "state"]));
-};
-
-export const isUserUnknown = state => {
-  return isIdle(state.getIn(["ui", "state"]));
+  return state.get("profile") !== null;
 };
 
 export const getProfile = state => {

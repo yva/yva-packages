@@ -15,5 +15,5 @@ export const profileReducer = handleActions(
       return state;
     },
   },
-  new Profile()
+  null
 );

@@ -19,3 +19,28 @@ export const hasAccessToken = () => {
   const { accessToken } = getCreds();
   return !!accessToken;
 };
+
+export const storeProfile = profile => {
+  try {
+    sessionStorage.setItem("profile", JSON.stringify(profile));
+
+    return true;
+  } catch (e) {}
+
+  return false;
+};
+
+export const getProfile = () => {
+  try {
+    const profile = sessionStorage.getItem("profile");
+    return JSON.parse(profile);
+  } catch (e) {}
+
+  return null;
+};
+
+export const clearStoredProfile = () => {
+  try {
+    sessionStorage.removeItem("profile");
+  } catch (e) {}
+};
