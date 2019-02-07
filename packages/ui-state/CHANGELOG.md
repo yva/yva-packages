@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/yva/yva-packages/compare/@yva/ui-state@0.1.3...@yva/ui-state@0.2.0) (2019-02-07)
+
+
+### Features
+
+* **ui-state:** accept passed details prop into the UI model by "pending" and "success" actions ([c87afca](https://github.com/yva/yva-packages/commit/c87afca))
+
+
+
+
+
 ## [0.1.3](https://github.com/yva/yva-packages/compare/@yva/ui-state@0.1.2...@yva/ui-state@0.1.3) (2019-01-16)
 
 **Note:** Version bump only for package @yva/ui-state
