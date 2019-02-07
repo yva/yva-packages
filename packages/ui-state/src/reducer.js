@@ -7,10 +7,16 @@ import * as states from "./states";
 import { UI } from "./models/UI";
 
 export const uiReducer = (state = new UI(), action) => {
-  const { payload } = action;
+  const { payload, meta } = action;
 
   if (isAsyncAction(action)) {
-    return state.set("state", states.pending);
+    const newState = state.set("state", states.pending);
+
+    if (meta && meta.details) {
+      return newState.set("details", meta.details);
+    }
+
+    return newState;
   }
 
   if (isErrorAction(action)) {
@@ -28,7 +34,13 @@ export const uiReducer = (state = new UI(), action) => {
       return state.set("state", states.empty).set("details", reason);
     }
 
-    return state.set("state", states.success);
+    const newState = state.set("state", states.success);
+
+    if (meta && meta.details) {
+      return newState.set("details", meta.details);
+    }
+
+    return newState;
   }
 
   return state;
