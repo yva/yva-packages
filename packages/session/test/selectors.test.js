@@ -12,11 +12,9 @@ describe("selectors", () => {
     payload: {
       response: {
         displayName: "Ivan Burnaev",
-        team: {
-          id: 1,
-          rolesAndSettings: {
-            isAdministrator: true,
-          },
+        teamId: 1,
+        rolesAndSettings: {
+          isAdministrator: true,
         },
         emails: [{ value: "iburnaev@yva.com" }],
       },
@@ -44,10 +42,6 @@ describe("selectors", () => {
 
   it("should check the team", () => {
     expect(selectors.hasUserATeam(state)).toBeTruthy();
-  });
-
-  it("should return the team", () => {
-    expect(selectors.getTeam(state).id).toEqual(1);
   });
 
   it("should return user roles", () => {

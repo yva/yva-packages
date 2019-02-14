@@ -2,7 +2,7 @@ import {
   getAuthLink,
   hasAccessToken,
   storeProfile,
-  getProfile,
+  restoreProfile,
   clearStoredProfile
 } from "../src/lib";
 
@@ -60,20 +60,20 @@ describe("storeProfile", () => {
   });
 });
 
-describe("getProfile", () => {
+describe("restoreProfile", () => {
   beforeEach(() => {
     sessionStorage.clear();
   });
 
   it("should return stored profile", () => {
     storeProfile({ hasName: true });
-    expect(getProfile()).toEqual({ hasName: true });
+    expect(restoreProfile()).toEqual({ hasName: true });
   });
 
   it("should return `null` if no profile found", () => {
     sessionStorage.setItem("profile", "[]:123");
 
-    expect(getProfile()).toEqual(null);
+    expect(restoreProfile()).toEqual(null);
   });
 });
 

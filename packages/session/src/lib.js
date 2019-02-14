@@ -30,7 +30,7 @@ export const storeProfile = profile => {
   return false;
 };
 
-export const getProfile = () => {
+export const restoreProfile = () => {
   try {
     const profile = sessionStorage.getItem("profile");
     return JSON.parse(profile);

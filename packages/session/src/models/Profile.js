@@ -1,26 +1,29 @@
 import { List } from "immutable";
 import Record from "immutable-nestable-record";
 
-import { Team } from "./Team";
 import { Email } from "./Email";
+import { Roles } from "./Roles";
 
 export const Profile = Record(
   {
     id: null,
-    userId: null,
-    createdAt: null,
+    firstName: null,
+    lastName: null,
     displayName: null,
     primaryEmail: null,
     jobTitle: null,
     department: null,
     status: null,
     emails: List(),
-    team: null,
+    userId: null,
+    teamId: null,
     avatar: null,
+    rolesAndSettings: new Roles(),
+    createdAt: null,
   },
   {
     emails: [List, Email],
-    team: Team,
+    rolesAndSettings: Roles,
   },
   "SessionProfile"
 );

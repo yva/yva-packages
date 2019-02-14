@@ -1,12 +1,12 @@
 import Record from "immutable-nestable-record";
 import { models } from "@yva/ui-state";
 import { Profile } from "./Profile";
-import { getProfile } from "../lib";
+import { restoreProfile } from "../lib";
 
 const { UI } = models;
 
-const restoreProfile = () => {
-  const storedProfile = getProfile();
+const loadProfile = () => {
+  const storedProfile = restoreProfile();
 
   /* istanbul ignore next line */
   return storedProfile ? new Profile(storedProfile) : null;
@@ -14,7 +14,7 @@ const restoreProfile = () => {
 
 export const InitialState = Record(
   {
-    profile: restoreProfile(),
+    profile: loadProfile(),
     ui: new UI(),
   },
   {

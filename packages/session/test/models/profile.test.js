@@ -10,7 +10,15 @@ describe("Profile", () => {
       avatar: null,
       createdAt: null,
       department: null,
+      firstName: null,
+      lastName: null,
       displayName: null,
+      rolesAndSettings: {
+        includeIn360Survey: false,
+        isAdministrator: false,
+        isManager: false,
+        sendSurveys: false,
+      },
       emails: [
         {
           isConfirmed: false,
@@ -23,7 +31,7 @@ describe("Profile", () => {
       jobTitle: null,
       primaryEmail: null,
       status: null,
-      team: null,
+      teamId: null,
       userId: null,
     });
   });
@@ -38,6 +46,6 @@ describe("Profile", () => {
   });
 
   it("should have no default team", () => {
-    expect(profile.team).toBeNull();
+    expect(profile.teamId).toBeNull();
   });
 });
