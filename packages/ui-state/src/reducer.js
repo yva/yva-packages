@@ -9,14 +9,12 @@ import { UI } from "./models/UI";
 export const uiReducer = (state = new UI(), action) => {
   const { payload, meta } = action;
 
+  const newState = state.update("details", details => {
+    return meta && meta.details ? meta.details : details;
+  });
+
   if (isAsyncAction(action)) {
-    const newState = state.set("state", states.pending);
-
-    if (meta && meta.details) {
-      return newState.set("details", meta.details);
-    }
-
-    return newState;
+    return newState.set("state", states.pending);
   }
 
   if (isErrorAction(action)) {
@@ -34,13 +32,7 @@ export const uiReducer = (state = new UI(), action) => {
       return state.set("state", states.empty).set("details", reason);
     }
 
-    const newState = state.set("state", states.success);
-
-    if (meta && meta.details) {
-      return newState.set("details", meta.details);
-    }
-
-    return newState;
+    return newState.set("state", states.success);
   }
 
   return state;

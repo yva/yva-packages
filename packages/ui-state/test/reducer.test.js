@@ -30,8 +30,8 @@ describe("uiReducer", () => {
     expect(state.details).toEqual(null);
   });
 
-  it("should set passed details", () => {
-    const action = {
+  it("should respect details meta prop", () => {
+    const actionWithDetails = {
       type: "module/action",
       meta: {
         [async]: true,
@@ -42,10 +42,21 @@ describe("uiReducer", () => {
       payload: {},
     };
 
-    const state = uiReducer(undefined, action);
+    const stateWithDetails = uiReducer(undefined, actionWithDetails);
+    expect(stateWithDetails.state).toEqual("pending");
+    expect(stateWithDetails.details).toEqual({ isFetching: true });
 
-    expect(state.state).toEqual("pending");
-    expect(state.details).toEqual({ isFetching: true });
+    const actionWithoutDetails = {
+      type: "module/action",
+      meta: {
+        [async]: true,
+      },
+      payload: {},
+    };
+
+    const stateWithoutDetails = uiReducer(undefined, actionWithoutDetails);
+    expect(stateWithoutDetails.state).toEqual("pending");
+    expect(stateWithoutDetails.details).toEqual(null);
   });
 
   it("should return success state", () => {
