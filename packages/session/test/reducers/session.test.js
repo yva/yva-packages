@@ -1,5 +1,5 @@
-import { states } from "@yva/ui-state";
-import { success } from "redux-async-epic";
+import { idle, success } from "@yva/ui-state";
+import { success as symbol } from "redux-async-epic";
 import { sessionReducer } from "../../src/reducers/session";
 
 describe("sessionReducer", () => {
@@ -23,7 +23,7 @@ describe("sessionReducer", () => {
     const action = {
       type: "@yva/session/fetch-profile/success",
       meta: {
-        [success]: true,
+        [symbol]: true,
       },
       payload: {
         response: {
@@ -34,14 +34,14 @@ describe("sessionReducer", () => {
     const state = sessionReducer(undefined, action);
 
     expect(state.profile.displayName).toEqual("Ivan Burnaev");
-    expect(state.ui.state).toEqual(states.success);
+    expect(state.ui.state).toEqual(success);
   });
 
   it("should ignore actions without @yva/session type", () => {
     const action = {
       type: "@othercomp/session/fetch-profile/success",
       meta: {
-        [success]: true,
+        [symbol]: true,
       },
       payload: {
         response: {
@@ -52,6 +52,6 @@ describe("sessionReducer", () => {
     const state = sessionReducer(undefined, action);
 
     expect(state.profile).toBeNull();
-    expect(state.ui.state).toEqual(states.idle);
+    expect(state.ui.state).toEqual(idle);
   });
 });

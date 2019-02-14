@@ -1,4 +1,4 @@
-import { states } from "@yva/ui-state";
+import { success as successState } from "@yva/ui-state";
 import { success } from "redux-async-epic";
 import { sessionReducer } from "../src/reducers/session";
 import * as selectors from "../src/selectors";
@@ -25,7 +25,7 @@ describe("selectors", () => {
   it("should return a default UI state", () => {
     const ui = selectors.getUI(state);
 
-    expect(ui.state).toEqual(states.success);
+    expect(ui.state).toEqual(successState);
     expect(ui.details).toEqual(null);
   });
 
