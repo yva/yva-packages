@@ -5,12 +5,15 @@ export const withLocale = locale => requestData => {
     return requestData;
   }
 
-  let url = new URL(requestData.url);
-  let params = new URLSearchParams(url.search);
+  try {
+    let url = new URL(requestData.url);
+    let params = new URLSearchParams(url.search);
 
-  params.append("locale", locale || getLocale());
-  url.search = params.toString();
+    params.append("locale", locale || getLocale());
+    url.search = params.toString();
 
-  requestData.url = url.toString();
+    requestData.url = url.toString();
+  } catch (e) {}
+
   return requestData;
 };
