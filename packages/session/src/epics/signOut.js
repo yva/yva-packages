@@ -1,4 +1,5 @@
-import { cleanCreds } from "@yva/credits";
+import { clearCreds } from "@yva/credits";
+import { clearLocale } from "@yva/locale";
 import { tap, ignoreElements } from "rxjs/operators";
 import { ofType } from "redux-observable";
 import { getAuthLink, clearStoredProfile } from "../lib";
@@ -8,7 +9,8 @@ export const signOut = action$ =>
   action$.pipe(
     ofType(types.signOut),
     tap(() => {
-      cleanCreds();
+      clearCreds();
+      clearLocale();
       clearStoredProfile();
     }),
     tap(() => {

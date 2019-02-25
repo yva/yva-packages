@@ -24,6 +24,7 @@
   "dependencies": {
     "@yva/config": "^0.1.2",
     "@yva/credits": "^0.1.2",
+    "@yva/locale": "^0.1.0",
     "@yva/request": "^0.1.2",
     "@yva/ui-state": "^1.0.0",
     "immutable": "^4.0.0-rc.12",

@@ -33,16 +33,16 @@ describe("signOut", () => {
   });
 
   it("should clear stored credentials", done => {
-    creds.cleanCreds = jest.fn();
+    creds.clearCreds = jest.fn();
 
     const action$ = of(signOut());
     const obs$ = epic(action$);
 
     obs$.subscribe({
       complete: val => {
-        expect(creds.cleanCreds).toBeCalled();
-        expect(creds.cleanCreds).toBeCalledTimes(1);
-        creds.cleanCreds.mockRestore();
+        expect(creds.clearCreds).toBeCalled();
+        expect(creds.clearCreds).toBeCalledTimes(1);
+        creds.clearCreds.mockRestore();
         done();
       },
     });

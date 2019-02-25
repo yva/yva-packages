@@ -23,7 +23,7 @@ export const getCreds = () => {
   };
 };
 
-export const cleanCreds = () => {
+export const clearCreds = () => {
   cookies.remove("accessToken");
   cookies.remove("userId");
 };

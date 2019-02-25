@@ -1,10 +1,12 @@
 import { ajax } from "rxjs/ajax";
 import { withContentType } from "./lib/with-content-type";
 import { withAuth } from "./lib/with-auth";
+import { withLocale } from "./lib/with-locale";
 
 export * from "./lib/get-response";
 export * from "./lib/with-auth";
 export * from "./lib/with-content-type";
+export * from "./lib/with-locale";
 export * from "./lib/min-wait";
 export * from "./lib/max-wait";
 
@@ -20,6 +22,7 @@ export const getRequest = (...enhancers) => {
 };
 
 export const request = getRequest(
+  withLocale(),
   withContentType("application/json"),
   withAuth()
 );

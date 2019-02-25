@@ -1,4 +1,4 @@
-import { saveCreds, getCreds, cleanCreds } from "../src/index";
+import { saveCreds, getCreds, clearCreds } from "../src/index";
 import cookies from "js-cookie";
 
 jest.mock("js-cookie", () => {
@@ -92,9 +92,9 @@ describe("getCreds", () => {
   });
 });
 
-describe("cleanCreds", () => {
+describe("clearCreds", () => {
   it("should be a function", () => {
-    expect(typeof cleanCreds).toEqual("function");
+    expect(typeof clearCreds).toEqual("function");
   });
 
   it("should remove credits from the cookies", () => {
@@ -107,7 +107,7 @@ describe("cleanCreds", () => {
     saveCreds(credits);
     expect(Object.keys(cookies._getLocal())).toEqual(["accessToken", "userId"]);
 
-    cleanCreds();
+    clearCreds();
     expect(Object.keys(cookies._getLocal()).length).toEqual(0);
   });
 });

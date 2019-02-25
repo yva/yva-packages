@@ -1,4 +1,4 @@
-import { saveLocale, getLocale, cleanLocale } from "../src/index";
+import { saveLocale, getLocale, clearLocale } from "../src/index";
 import cookies from "js-cookie";
 
 jest.mock("js-cookie", () => {
@@ -20,10 +20,18 @@ jest.mock("js-cookie", () => {
     remove: name => {
       delete localCookies[name];
     },
+
+    clear: () => {
+      localCookies = {};
+    },
   };
 });
 
 describe("saveLocale", () => {
+  beforeEach(() => {
+    cookies.clear();
+  });
+
   it("should be a function", () => {
     expect(typeof saveLocale).toEqual("function");
   });
@@ -38,7 +46,6 @@ describe("saveLocale", () => {
     const locale = "en";
 
     saveLocale(locale);
-
     expect(cookies._getLocal()).toEqual({
       locale: "en",
     });
@@ -46,22 +53,33 @@ describe("saveLocale", () => {
 });
 
 describe("getLocale", () => {
+  beforeEach(() => {
+    cookies.clear();
+  });
+
   it("should be a function", () => {
     expect(typeof getLocale).toEqual("function");
+  });
+
+  it("should return a default locale if no one has been saved before", () => {
+    expect(getLocale()).toEqual("en");
   });
 
   it("should get locale from the cookies", () => {
     const locale = "en";
 
     saveLocale(locale);
-
     expect(getLocale()).toEqual("en");
   });
 });
 
-describe("cleanLocale", () => {
+describe("clearLocale", () => {
+  beforeEach(() => {
+    cookies.clear();
+  });
+
   it("should be a function", () => {
-    expect(typeof cleanLocale).toEqual("function");
+    expect(typeof clearLocale).toEqual("function");
   });
 
   it("should remove locale from the cookies", () => {
@@ -70,7 +88,7 @@ describe("cleanLocale", () => {
     saveLocale(locale);
     expect(Object.keys(cookies._getLocal())).toEqual(["locale"]);
 
-    cleanLocale();
+    clearLocale();
     expect(Object.keys(cookies._getLocal()).length).toEqual(0);
   });
 });
