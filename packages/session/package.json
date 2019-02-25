@@ -1,6 +1,6 @@
 {
   "name": "@yva/session",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "@yva/config": "^0.1.2",
-    "@yva/credits": "^0.1.2",
-    "@yva/locale": "^0.1.0",
-    "@yva/request": "^0.1.2",
+    "@yva/credits": "^0.2.0",
+    "@yva/locale": "^0.2.0",
+    "@yva/request": "^0.2.0",
     "@yva/ui-state": "^1.0.0",
     "immutable": "^4.0.0-rc.12",
     "immutable-nestable-record": "^0.1.2",

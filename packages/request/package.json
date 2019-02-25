@@ -1,6 +1,6 @@
 {
   "name": "@yva/request",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "",
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -23,8 +23,8 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@yva/credits": "^0.1.2",
-    "@yva/locale": "^0.1.0",
+    "@yva/credits": "^0.2.0",
+    "@yva/locale": "^0.2.0",
     "rxjs": "^6.3.3"
   }
 }
