@@ -1,4 +1,4 @@
-import { withLocale } from "../src/lib/with-Locale";
+import { withLocale } from "../src/lib/with-locale";
 
 jest.mock("@yva/locale", () => ({
   getLocale: () => "en",
