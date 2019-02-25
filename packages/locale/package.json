@@ -1,0 +1,28 @@
+{
+  "name": "@yva/locale",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yva/yva-packages"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "Ivan Burnaev <ivan.biirus@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm -rf dist/ es/",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.0"
+  }
+}
