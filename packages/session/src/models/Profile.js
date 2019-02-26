@@ -20,6 +20,7 @@ export const Profile = Record(
     avatar: null,
     rolesAndSettings: new Roles(),
     createdAt: null,
+    locale: "en",
   },
   {
     emails: [List, Email],

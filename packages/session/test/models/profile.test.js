@@ -33,6 +33,7 @@ describe("Profile", () => {
       status: null,
       teamId: null,
       userId: null,
+      locale: "en",
     });
   });
 
