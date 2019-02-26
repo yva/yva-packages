@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/yva/yva-packages/compare/@yva/session@1.1.0...@yva/session@1.1.1) (2019-02-26)
+
+
+### Bug Fixes
+
+* **locale:** add locale prop to the Profile model ([d6ecea8](https://github.com/yva/yva-packages/commit/d6ecea8))
+
+
+
+
+
 # [1.1.0](https://github.com/yva/yva-packages/compare/@yva/session@1.0.0...@yva/session@1.1.0) (2019-02-25)
 
 
