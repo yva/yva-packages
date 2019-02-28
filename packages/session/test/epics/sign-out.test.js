@@ -1,6 +1,6 @@
 import { of } from "rxjs";
 import * as creds from "@yva/credits";
-import { signOut as epic } from "../../src/epics/signOut";
+import { signOut as epic } from "../../src/epics/sign-out";
 import { signOut } from "../../src/actions";
 
 jest.mock("@yva/config", () => ({

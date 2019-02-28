@@ -24,3 +24,15 @@ export const getProfile = () => {
     url: `${API}/users/users/me/`,
   });
 };
+
+export const changeLocale = locale => {
+  const { API } = getConfig();
+
+  return request({
+    url: `${API}/users/users/me/locale`,
+    method: "put",
+    body: {
+      value: locale,
+    },
+  });
+};

@@ -44,7 +44,9 @@
     "rollup-plugin-terser": "^4.0.2",
     "rxjs-marbles": "^5.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@yva/session": "^1.1.1"
+  },
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules/"

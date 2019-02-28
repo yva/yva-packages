@@ -1,5 +1,5 @@
 import { of } from "rxjs";
-import { storeProfile as epic } from "../../src/epics/storeProfile";
+import { storeProfile as epic } from "../../src/epics/store-profile";
 
 jest.mock("@yva/config", () => ({
   getConfig: () => ({

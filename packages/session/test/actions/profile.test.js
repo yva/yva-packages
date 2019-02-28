@@ -1,5 +1,5 @@
 import { isObservable } from "rxjs";
-import { fetchProfile } from "../../src/actions/profile";
+import { fetchProfile, changeLocale } from "../../src/actions/profile";
 import { async } from "redux-async-epic";
 
 describe("fetchProfile", () => {
@@ -39,5 +39,26 @@ describe("fetchProfile", () => {
       args: [{ pathname: "/", search: { q: 1 } }],
       method: "replace",
     });
+  });
+});
+
+describe("changeLocale", () => {
+  const action = changeLocale("ru");
+
+  it("should return `change-locale` action", () => {
+    expect(action.type).toEqual("@yva/session/change-locale");
+  });
+
+  it("should have `meta` prop", () => {
+    expect(Object.keys(action.meta).length).toBeGreaterThan(0);
+  });
+
+  it("should be an `async` action", () => {
+    expect(action.meta[async]).toBeTruthy();
+  });
+
+  it("should call a function that returns an Observable", () => {
+    expect(typeof action.meta.method).toEqual("function");
+    expect(isObservable(action.meta.method())).toBeTruthy();
   });
 });

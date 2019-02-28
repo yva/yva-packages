@@ -5,6 +5,7 @@ export const types = {
   signOut: `${name}/sign-out`,
   fetchProfile: `${name}/fetch-profile`,
   fetchToken: `${name}/fetch-token`,
+  changeLocale: `${name}/change-locale`,
 };
 
 export default types;

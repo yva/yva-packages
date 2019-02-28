@@ -1,4 +1,4 @@
-import { getToken, getProfile } from "../src/api";
+import { getToken, getProfile, changeLocale } from "../src/api";
 
 jest.mock("@yva/request", () => ({
   request: conf => conf,
@@ -37,6 +37,18 @@ describe("getProfileRequest", () => {
   it("should call @yva/request with passed config", () => {
     expect(getProfile()).toEqual({
       url: "https://localhost/api/users/users/me/",
+    });
+  });
+});
+
+describe("changeLocale", () => {
+  it("should call @yva/request with passed config", () => {
+    expect(changeLocale("en")).toEqual({
+      url: "https://localhost/api/users/users/me/locale",
+      method: "put",
+      body: {
+        value: "en",
+      },
     });
   });
 });

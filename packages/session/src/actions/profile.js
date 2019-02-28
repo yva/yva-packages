@@ -1,7 +1,7 @@
 import { async } from "redux-async-epic";
 import { replace } from "react-router-redux";
 import { createAction } from "redux-actions";
-import { getProfile } from "../api";
+import * as api from "../api";
 import types from "./types";
 
 export const fetchProfile = createAction(
@@ -9,7 +9,7 @@ export const fetchProfile = createAction(
   null,
   storedLocation => ({
     [async]: true,
-    method: getProfile,
+    method: api.getProfile,
     onSuccess: () => {
       let location = "/";
 
@@ -21,3 +21,8 @@ export const fetchProfile = createAction(
     },
   })
 );
+
+export const changeLocale = createAction(types.changeLocale, null, payload => ({
+  [async]: true,
+  method: () => api.changeLocale(payload.locale),
+}));
