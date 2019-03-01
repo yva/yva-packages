@@ -3,11 +3,9 @@ export const getConfig = () => {
 };
 
 export const getEnv = key => {
-  const env = process.env.NODE_ENV === "development" ? process.env : window.env;
-
   if (key) {
-    return env[key.includes("REACT_APP_") ? key : `REACT_APP_${key}`];
+    return window.env[key.includes("REACT_APP_") ? key : `REACT_APP_${key}`];
   }
 
-  return env || {};
+  return window.env || {};
 };
