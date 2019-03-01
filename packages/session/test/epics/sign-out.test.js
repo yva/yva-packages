@@ -3,16 +3,18 @@ import * as creds from "@yva/credits";
 import { signOut as epic } from "../../src/epics/sign-out";
 import { signOut } from "../../src/actions";
 
-jest.mock("@yva/config", () => ({
-  getConfig: () => ({
-    UPDATE_INTERVAL: 20000,
-    SSO: "https://single-sign-on.service",
-    CLIENT_ID: "1",
-    REDIRECT_URI: "https://localhost/app/auth",
-  }),
-}));
-
 describe("signOut", () => {
+  beforeAll(() => {
+    window.env = {
+      REACT_APP_ROOT: "/dashboard",
+      REACT_APP_API: "https://localhost/api",
+      REACT_APP_SSO: "https://single-sign-on.service",
+      REACT_APP_CLIENT_ID: "1",
+      REACT_APP_REDIRECT_URI: "/auth",
+      REACT_APP_VERSION: "1.0.1",
+    };
+  });
+
   it("should redirect to the sso auth and logout", done => {
     window.location.assign = jest.fn();
 
@@ -22,7 +24,7 @@ describe("signOut", () => {
     obs$.subscribe({
       complete: val => {
         expect(window.location.assign).toHaveBeenCalledWith(
-          `https://single-sign-on.service/oauth2/authorize?clientId=1&redirectUri=https%3A%2F%2Flocalhost%2Fapp%2Fauth&responseType=Code&logout=true`
+          `https://single-sign-on.service/oauth2/authorize?clientId=1&redirectUri=http%3A%2F%2Flocalhost%2Fdashboard%2Fauth&responseType=Code&logout=true`
         );
 
         window.location.assign.mockRestore();

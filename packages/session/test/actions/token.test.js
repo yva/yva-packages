@@ -2,6 +2,17 @@ import { isObservable } from "rxjs";
 import { fetchToken } from "../../src/actions/token";
 import { async } from "redux-async-epic";
 
+beforeAll(() => {
+  window.env = {
+    REACT_APP_ROOT: "/dashboard",
+    REACT_APP_API: "https://localhost/api",
+    REACT_APP_SSO: "https://localhost/sso",
+    REACT_APP_CLIENT_ID: "5a9602da0f2ce70fd438bc43",
+    REACT_APP_REDIRECT_URI: "/auth",
+    REACT_APP_VERSION: "1.0.1",
+  };
+});
+
 describe("fetchToken", () => {
   const action = fetchToken({
     code: "CODE",

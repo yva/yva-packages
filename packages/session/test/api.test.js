@@ -4,18 +4,16 @@ jest.mock("@yva/request", () => ({
   request: conf => conf,
 }));
 
-jest.mock("@yva/config", () => ({
-  getConfig: () => ({
-    BASE_NAME: "/dashboard",
-    UPDATE_INTERVAL: 20000,
-    APP: "https://localhost/dashboard",
-    API: "https://localhost/api",
-    SSO: "https://localhost/sso",
-    CLIENT_ID: "5a9602da0f2ce70fd438bc43",
-    REDIRECT_URI: "https://localhost/dashboard/auth",
-    VERSION: "1.0.1",
-  }),
-}));
+beforeAll(() => {
+  window.env = {
+    REACT_APP_ROOT: "/dashboard",
+    REACT_APP_API: "https://localhost/api",
+    REACT_APP_SSO: "https://localhost/sso",
+    REACT_APP_CLIENT_ID: "5a9602da0f2ce70fd438bc43",
+    REACT_APP_REDIRECT_URI: "https://localhost/dashboard/auth",
+    REACT_APP_VERSION: "1.0.1",
+  };
+});
 
 describe("getToken", () => {
   it("should call @yva/request with passed config", () => {

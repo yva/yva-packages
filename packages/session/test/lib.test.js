@@ -6,29 +6,27 @@ import {
   clearStoredProfile
 } from "../src/lib";
 
-jest.mock("@yva/config", () => ({
-  getConfig: () => ({
-    BASE_NAME: "/dashboard",
-    UPDATE_INTERVAL: 20000,
-    APP: "https://localhost/dashboard",
-    API: "https://localhost/api",
-    SSO: "https://localhost/sso",
-    CLIENT_ID: "5a9602da0f2ce70fd438bc43",
-    REDIRECT_URI: "https://localhost/dashboard/auth",
-    VERSION: "1.0.1",
-  }),
-}));
-
 jest.mock("@yva/credits", () => ({
   getCreds: () => ({
     accessToken: null,
   }),
 }));
 
+beforeAll(() => {
+  window.env = {
+    REACT_APP_ROOT: "/dashboard",
+    REACT_APP_API: "https://localhost/api",
+    REACT_APP_SSO: "https://localhost/sso",
+    REACT_APP_CLIENT_ID: "5a9602da0f2ce70fd438bc43",
+    REACT_APP_REDIRECT_URI: "/auth",
+    REACT_APP_VERSION: "1.0.1",
+  };
+});
+
 describe("getAuthLink", () => {
   it("should return an auth link by params", () => {
     expect(getAuthLink({ isLogin: false })).toEqual(
-      "https://localhost/sso/oauth2/authorize?clientId=5a9602da0f2ce70fd438bc43&redirectUri=https%3A%2F%2Flocalhost%2Fdashboard%2Fauth&responseType=Code&isLogin=false"
+      "https://localhost/sso/oauth2/authorize?clientId=5a9602da0f2ce70fd438bc43&redirectUri=http%3A%2F%2Flocalhost%2Fdashboard%2Fauth&responseType=Code&isLogin=false"
     );
   });
 });

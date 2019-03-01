@@ -2,6 +2,17 @@ import { isObservable } from "rxjs";
 import { fetchProfile, changeLocale } from "../../src/actions/profile";
 import { async } from "redux-async-epic";
 
+jest.mock("@yva/config", () => ({
+  getEnv: () => ({
+    REACT_APP_ROOT: "/dashboard",
+    REACT_APP_API: "https://localhost/api",
+    REACT_APP_SSO: "https://localhost/sso",
+    REACT_APP_CLIENT_ID: "5a9602da0f2ce70fd438bc43",
+    REACT_APP_REDIRECT_URI: "https://localhost/dashboard/auth",
+    REACT_APP_VERSION: "1.0.1",
+  }),
+}));
+
 describe("fetchProfile", () => {
   const action = fetchProfile(
     JSON.stringify({ pathname: "/", search: { q: 1 } })

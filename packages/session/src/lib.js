@@ -1,13 +1,22 @@
 import { stringify } from "qs";
-import { getConfig } from "@yva/config";
+import urljoin from "url-join";
+import { getEnv } from "@yva/config";
 import { getCreds } from "@yva/credits";
 
 export const getAuthLink = params => {
-  const { SSO, CLIENT_ID, REDIRECT_URI } = getConfig();
+  const clientId = getEnv("CLIENT_ID");
+  const SSO = getEnv("SSO");
+  const ROOT = getEnv("ROOT");
+  const REDIRECT_URI = getEnv("REDIRECT_URI");
+
+  const redirectUri = new URL(
+    urljoin(ROOT, REDIRECT_URI),
+    window.location.origin
+  ).href;
 
   const data = {
-    clientId: CLIENT_ID,
-    redirectUri: REDIRECT_URI,
+    clientId,
+    redirectUri,
     responseType: "Code",
     ...params,
   };

@@ -1,16 +1,20 @@
 import { request } from "@yva/request";
-import { getConfig } from "@yva/config";
+import { getEnv } from "@yva/config";
 
 export const getToken = code => {
-  const { SSO, CLIENT_ID, REDIRECT_URI } = getConfig();
+  const SSO = getEnv("SSO");
+  const clientId = getEnv("CLIENT_ID");
+  const REDIRECT_URI = getEnv("REDIRECT_URI");
+
+  const redirectUri = new URL(REDIRECT_URI, window.location.origin).href;
 
   return request({
     url: `${SSO}/oauth2/token/`,
     method: "POST",
     responseType: "json",
     body: {
-      clientId: CLIENT_ID,
-      redirectUri: REDIRECT_URI,
+      clientId,
+      redirectUri,
       grantType: "authorizationCode",
       code,
     },
@@ -18,7 +22,7 @@ export const getToken = code => {
 };
 
 export const getProfile = () => {
-  const { API } = getConfig();
+  const API = getEnv("API");
 
   return request({
     url: `${API}/users/users/me/`,
@@ -26,7 +30,7 @@ export const getProfile = () => {
 };
 
 export const changeLocale = locale => {
-  const { API } = getConfig();
+  const API = getEnv("API");
 
   return request({
     url: `${API}/users/users/me/locale`,
