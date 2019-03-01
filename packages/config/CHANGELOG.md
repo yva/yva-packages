@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/yva/yva-packages/compare/@yva/config@0.2.0...@yva/config@0.2.1) (2019-03-01)
+
+
+### Bug Fixes
+
+* **getEnv:** remove NODE_ENV checking ([3d2de2b](https://github.com/yva/yva-packages/commit/3d2de2b))
+
+
+
+
+
 # [0.2.0](https://github.com/yva/yva-packages/compare/@yva/config@0.1.2...@yva/config@0.2.0) (2019-03-01)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/yva/yva-packages/compare/@yva/session@1.2.1...@yva/session@2.0.0) (2019-03-01)
+
+
+### Code Refactoring
+
+* **.env:** move @yva/session getConfig to getEnv ([19a2941](https://github.com/yva/yva-packages/commit/19a2941))
+
+
+### BREAKING CHANGES
+
+* **.env:** new SSO URL scheme
+
+
+
+
+
 ## [1.2.1](https://github.com/yva/yva-packages/compare/@yva/session@1.2.0...@yva/session@1.2.1) (2019-03-01)
 
 **Note:** Version bump only for package @yva/session
