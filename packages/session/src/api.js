@@ -1,12 +1,17 @@
+import urljoin from "url-join";
 import { request } from "@yva/request";
 import { getEnv } from "@yva/config";
 
 export const getToken = code => {
-  const SSO = getEnv("SSO");
   const clientId = getEnv("CLIENT_ID");
+  const SSO = getEnv("SSO");
+  const ROOT = getEnv("ROOT");
   const REDIRECT_URI = getEnv("REDIRECT_URI");
 
-  const redirectUri = new URL(REDIRECT_URI, window.location.origin).href;
+  const redirectUri = new URL(
+    urljoin(ROOT, REDIRECT_URI),
+    window.location.origin
+  ).href;
 
   return request({
     url: `${SSO}/oauth2/token/`,
