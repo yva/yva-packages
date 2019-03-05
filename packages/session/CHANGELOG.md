@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/yva/yva-packages/compare/@yva/session@2.0.0...@yva/session@2.0.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **env:** append root address to the \`redirectUri\` token request ([5b026ee](https://github.com/yva/yva-packages/commit/5b026ee))
+
+
+
+
+
 # [2.0.0](https://github.com/yva/yva-packages/compare/@yva/session@1.2.1...@yva/session@2.0.0) (2019-03-01)
 
 
