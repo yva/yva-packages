@@ -20,15 +20,25 @@ describe("getConfig", () => {
 });
 
 describe("getEnv", () => {
-  beforeEach(() => {
-    window.env = {};
-  });
-
   it("should retun an empty object if is no env has been found", () => {
     const env = getEnv();
 
     expect(typeof env).toEqual("object");
     expect(Object.keys(env).length).toEqual(0);
+  });
+
+  it("should return `undefined` if key has been passed and no env has been found", () => {
+    const api = getEnv("API");
+
+    expect(api).toBeUndefined();
+  });
+
+  it("should return whole env configs if no key has been passed", () => {
+    window.env = {
+      TEST: 1,
+    };
+
+    expect(getEnv()).toEqual({ TEST: 1 });
   });
 
   it("should return env key", () => {
