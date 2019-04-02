@@ -6,7 +6,7 @@ export const withLocale = locale => requestData => {
   }
 
   try {
-    let url = new URL(requestData.url);
+    let url = new URL(requestData.url, window.location.origin);
     let params = new URLSearchParams(url.search);
 
     params.append("locale", locale || getLocale());
