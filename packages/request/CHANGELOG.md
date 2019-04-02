@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/yva/yva-packages/compare/@yva/request@0.2.0...@yva/request@0.2.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* **request:** fix URL creation at \`with-locale\`, now it supports relative path ([2d0c9d1](https://github.com/yva/yva-packages/commit/2d0c9d1))
+
+
+
+
+
 # [0.2.0](https://github.com/yva/yva-packages/compare/@yva/request@0.1.2...@yva/request@0.2.0) (2019-02-25)
 
 
