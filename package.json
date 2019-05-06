@@ -13,7 +13,7 @@
     "format": "npx prettier-eslint --write \"packages/**/{src,test}/*.js\"",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test jest",
-    "precommit": "npm run format:check && npm run lint",
+    "precommit": "npm run format:check && npm run lint && npm run test",
     "commit": "npx git-cz",
     "build": " lerna run build --parallel",
     "postbuild": "npx lerna bootstrap",

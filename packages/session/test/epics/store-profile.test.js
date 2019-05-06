@@ -20,7 +20,13 @@ describe("storeProfile", () => {
       type: "@yva/session/fetch-profile/success",
       payload: {
         response: {
-          displayName: "Ivan Burnaev",
+          info: {
+            displayName: "Ivan Burnaev",
+          },
+
+          settings: {
+            locale: "en",
+          },
         },
       },
     });
@@ -30,7 +36,13 @@ describe("storeProfile", () => {
       complete: () => {
         expect(sessionStorage.getItem("profile")).toEqual(
           JSON.stringify({
-            displayName: "Ivan Burnaev",
+            info: {
+              displayName: "Ivan Burnaev",
+            },
+
+            settings: {
+              locale: "en",
+            },
           })
         );
 

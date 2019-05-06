@@ -11,7 +11,10 @@ export const storeProfile = action$ =>
     tap(({ payload }) => {
       if (payload && payload.response) {
         save(payload.response);
-        saveLocale(payload.response.settings.locale);
+
+        if (payload.response.settings && payload.response.settings.locale) {
+          saveLocale(payload.response.settings.locale);
+        }
       }
     }),
     ignoreElements()
