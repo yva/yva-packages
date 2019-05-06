@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/yva/yva-packages/compare/@yva/session@2.0.3...@yva/session@3.0.0) (2019-05-06)
+
+
+### Code Refactoring
+
+* **session:** change API scheme and Profile Model structure ([f19b128](https://github.com/yva/yva-packages/commit/f19b128))
+
+
+### BREAKING CHANGES
+
+* **session:** New REST-API scheme and Profile model
+
+
+
+
+
 ## [2.0.3](https://github.com/yva/yva-packages/compare/@yva/session@2.0.2...@yva/session@2.0.3) (2019-04-02)
 
 
