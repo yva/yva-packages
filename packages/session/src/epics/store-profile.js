@@ -11,7 +11,7 @@ export const storeProfile = action$ =>
     tap(({ payload }) => {
       if (payload && payload.response) {
         save(payload.response);
-        saveLocale(payload.response.locale);
+        saveLocale(payload.response.settings.locale);
       }
     }),
     ignoreElements()
