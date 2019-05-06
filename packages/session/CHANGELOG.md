@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/yva/yva-packages/compare/@yva/session@3.0.0...@yva/session@3.0.1) (2019-05-06)
+
+
+### Bug Fixes
+
+* **session:** properly store locale into cookies while session profile is changed ([fb6c20d](https://github.com/yva/yva-packages/commit/fb6c20d))
+
+
+
+
+
 # [3.0.0](https://github.com/yva/yva-packages/compare/@yva/session@2.0.3...@yva/session@3.0.0) (2019-05-06)
 
 
