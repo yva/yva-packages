@@ -27,13 +27,15 @@ describe("sessionReducer", () => {
       },
       payload: {
         response: {
-          displayName: "Ivan Burnaev",
+          info: {
+            displayName: "Ivan Burnaev",
+          },
         },
       },
     };
     const state = sessionReducer(undefined, action);
 
-    expect(state.profile.displayName).toEqual("Ivan Burnaev");
+    expect(state.profile.info.displayName).toEqual("Ivan Burnaev");
     expect(state.ui.state).toEqual(success);
   });
 
@@ -45,7 +47,9 @@ describe("sessionReducer", () => {
       },
       payload: {
         response: {
-          displayName: "Ivan Burnaev",
+          info: {
+            displayName: "Ivan Burnaev",
+          },
         },
       },
     };

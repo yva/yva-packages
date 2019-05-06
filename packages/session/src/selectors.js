@@ -14,6 +14,6 @@ export const hasUserATeam = state => {
   return !!state.getIn(["profile", "teamId"], false);
 };
 
-export const getRoles = state => {
-  return state.getIn(["profile", "rolesAndSettings"], null);
+export const getSettings = state => {
+  return state.getIn(["profile", "settings"], null);
 };

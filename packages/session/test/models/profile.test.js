@@ -1,49 +1,47 @@
 import { List } from "immutable";
-import { Email } from "../../src/models/Email";
 import { Profile } from "../../src/models/Profile";
+import { Info } from "../../src/models/Info";
 
 describe("Profile", () => {
-  const profile = new Profile({ emails: [{ value: "iburnaev@yva.ai" }] });
+  const profile = new Profile({
+    info: { emails: ["iburnaev@yva.ai"] },
+  });
 
   it("should have a defined structure", () => {
     expect(profile.toJS()).toEqual({
-      avatar: null,
+      id: null,
+      teamId: null,
       createdAt: null,
-      department: null,
-      firstName: null,
-      lastName: null,
-      displayName: null,
-      rolesAndSettings: {
+
+      settings: {
+        includeInReports: false,
         includeIn360Survey: false,
         isAdministrator: false,
         isManager: false,
         sendSurveys: false,
+        locale: "en",
       },
-      emails: [
-        {
-          isConfirmed: false,
-          isHeuristic: false,
-          isPrimary: false,
-          value: "iburnaev@yva.ai",
-        },
-      ],
-      id: null,
-      jobTitle: null,
-      primaryEmail: null,
-      status: null,
-      teamId: null,
-      userId: null,
-      locale: "en",
+      info: {
+        displayName: null,
+        firstName: null,
+        lastName: null,
+        department: null,
+        jobTitle: null,
+        primaryEmail: null,
+        loginEmail: null,
+        excludedEmails: [],
+        emails: ["iburnaev@yva.ai"],
+      },
     });
   });
 
   it("should have a List of emails", () => {
-    expect(profile).toHaveProperty("emails");
-    expect(profile.emails).toBeInstanceOf(List);
+    expect(profile.info).toHaveProperty("emails");
+    expect(profile.info.emails).toBeInstanceOf(List);
   });
 
   it("should populate nested structures", () => {
-    expect(profile.emails.get(0)).toBeInstanceOf(Email);
+    expect(profile.info).toBeInstanceOf(Info);
   });
 
   it("should have no default team", () => {

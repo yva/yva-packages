@@ -11,12 +11,14 @@ describe("selectors", () => {
     },
     payload: {
       response: {
-        displayName: "Ivan Burnaev",
         teamId: 1,
-        rolesAndSettings: {
+        settings: {
           isAdministrator: true,
         },
-        emails: [{ value: "iburnaev@yva.com" }],
+        info: {
+          displayName: "Ivan Burnaev",
+          emails: [{ value: "iburnaev@yva.com" }],
+        },
       },
     },
   };
@@ -36,15 +38,15 @@ describe("selectors", () => {
   it("should return the profile", () => {
     const profile = selectors.getProfile(state);
 
-    expect(profile).toHaveProperty("displayName");
-    expect(profile.displayName).toEqual("Ivan Burnaev");
+    expect(profile.info).toHaveProperty("displayName");
+    expect(profile.info.displayName).toEqual("Ivan Burnaev");
   });
 
   it("should check the team", () => {
     expect(selectors.hasUserATeam(state)).toBeTruthy();
   });
 
-  it("should return user roles", () => {
-    expect(selectors.getRoles(state).isAdministrator).toBeTruthy();
+  it("should return user settings", () => {
+    expect(selectors.getSettings(state).isAdministrator).toBeTruthy();
   });
 });

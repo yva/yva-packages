@@ -17,24 +17,26 @@ describe("profileReducer", () => {
       type: "@yva/session/fetch-profile/success",
       payload: {
         response: {
-          displayName: "Ivan Burnaev",
-          emails: [
-            {
-              value: "iburnaev@yva.com",
-            },
-            {
-              value: "iburnaev@yva.ai",
-              isPrimary: true,
-            },
-          ],
+          info: {
+            displayName: "Ivan Burnaev",
+            emails: [
+              {
+                value: "iburnaev@yva.com",
+              },
+              {
+                value: "iburnaev@yva.ai",
+                isPrimary: true,
+              },
+            ],
+          },
         },
         xhr: {},
       },
     });
 
-    expect(state.displayName).toEqual("Ivan Burnaev");
-    expect(state.emails).toBeInstanceOf(List);
-    expect(state.emails.get(1).isPrimary).toBeTruthy();
+    expect(state.info.displayName).toEqual("Ivan Burnaev");
+    expect(state.info.emails).toBeInstanceOf(List);
+    expect(state.info.emails.get(1).isPrimary).toBeTruthy();
   });
 
   it("should return default state if action is success but no `response` prop", () => {

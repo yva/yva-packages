@@ -30,7 +30,7 @@ export const getProfile = () => {
   const API = getEnv("API");
 
   return request({
-    url: `${API}/users/users/me/`,
+    url: `${API}/team/users/me/`,
   });
 };
 
@@ -38,7 +38,7 @@ export const changeLocale = locale => {
   const API = getEnv("API");
 
   return request({
-    url: `${API}/users/users/me/locale`,
+    url: `${API}/team/users/me/locale`,
     method: "put",
     body: {
       value: locale,

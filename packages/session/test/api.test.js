@@ -34,7 +34,7 @@ describe("getToken", () => {
 describe("getProfileRequest", () => {
   it("should call @yva/request with passed config", () => {
     expect(getProfile()).toEqual({
-      url: "http://localhost/api/users/users/me/",
+      url: "http://localhost/api/team/users/me/",
     });
   });
 });
@@ -42,7 +42,7 @@ describe("getProfileRequest", () => {
 describe("changeLocale", () => {
   it("should call @yva/request with passed config", () => {
     expect(changeLocale("en")).toEqual({
-      url: "http://localhost/api/users/users/me/locale",
+      url: "http://localhost/api/team/users/me/locale",
       method: "put",
       body: {
         value: "en",

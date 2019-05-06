@@ -1,4 +1,4 @@
-export * from "./Email";
 export * from "./InitialState";
 export * from "./Profile";
-export * from "./Roles";
+export * from "./Settings";
+export * from "./Info";
