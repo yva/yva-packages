@@ -7,6 +7,8 @@ export const Settings = Record(
     includeInReports: false,
     sendSurveys: false,
     includeIn360Survey: false,
+    forcedSurveysRequired: false,
+    timeZoneId: null,
     locale: "en",
   },
   {},
