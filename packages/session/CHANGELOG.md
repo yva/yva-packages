@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.7](https://github.com/yva/yva-packages/compare/@yva/session@3.0.6...@yva/session@3.0.7) (2020-06-18)
+
+
+### Bug Fixes
+
+* **session:** added new fields to the profile model ([fb6c20d](https://github.com/yva/yva-packages/commit/d9f1a32e8c8674fe340751948f3d6134ad5a2fab))
+
+
 ## [3.0.1](https://github.com/yva/yva-packages/compare/@yva/session@3.0.0...@yva/session@3.0.1) (2019-05-06)
 
 

@@ -11,8 +11,8 @@ export const Settings = Record(
     timeZoneId: null,
     locale: "en",
     custom1: null,
-    custom2: null,
     custom3: null,
+    custom2: null,
   },
   {},
   "SessionSettings"

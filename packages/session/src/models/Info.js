@@ -21,8 +21,8 @@ export const Info = Record(
     remoteWork: null,
     manager: null,
     managementLevel: null,
-    potentialEvaluation: null,
     performanceLevel: null,
+    potentialEvaluation: null,
   },
   {
     emails: List,
