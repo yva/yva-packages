@@ -10,6 +10,9 @@ export const Settings = Record(
     forcedSurveysRequired: false,
     timeZoneId: null,
     locale: "en",
+    custom1: null,
+    custom2: null,
+    custom3: null,
   },
   {},
   "SessionSettings"
