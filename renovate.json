@@ -1,9 +1,10 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "enabled": "false",
+  "packageRules": [{
+    "packagePatterns": ["*"],
+    "enabled": false
+  }],
   "vulnerabilityAlerts": {
+    "enabled": true,
     "labels": ["security"],
     "assignees": ["@phnx47"]
   }
