@@ -1,5 +1,11 @@
 {
+  "branchPrefix": "renovate/",
   "extends": [
     "config:base"
-  ]
+  ],
+  "enabled": "false",
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "assignees": ["@phnx47"]
+  }
 }
